@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: movies-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/moviesdb
+  main:
+    allow-circular-references: true
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/DigitalMedia
+        registration:
+          movies-service: #en hello-service esta como keycloak
+            provider: keycloak # va?
+            client-id: microservicios
+            client-secret: 3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN
+            #scope: openid # va?
+            authorization-grant-type: authorization_code
+            redirect-uri: 'http://localhost:8086/login/oauth2/code/keycloak' #si usamos google vamos a tener que poner google en vez de keycloak
+
+app:
+  cors:
+    allowed-origins: http://localhost:3000
+
+management:
+  endpoints:
+    web:
+      exposure.include: beans, env, health, info, metrics, mappings
+  endpoint:
+    health:
+      show-details: always
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    groups-order: DESC
+    disable-swagger-default-url: true
+server:
+  port: 8085
+
+eureka:
+  client:
+    enabled: true
+

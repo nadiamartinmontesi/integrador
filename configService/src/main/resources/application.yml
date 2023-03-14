@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: configService
+      #cloud:
+      #config:
+      #server:
+      #git:
+    #uri: https://github.com/nadiamartinmontesi/spring-cloud
+    #searchPaths: final
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service-final:8761/eureka/
+

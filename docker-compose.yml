@@ -1,0 +1,52 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - '5439:5439'
+    networks:
+      - local-keycloak
+    volumes:
+      - db:/var/lib/postgresql/data
+    container_name: postgres_keycloak
+  keycloak:
+    depends_on:
+      - postgres
+    container_name: local_keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: postgres
+      KC_DB_PASSWORD: 1234
+      KC_DB_USERNAME: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/keycloak
+    image: quay.io/keycloak/keycloak:18.0.0
+    command: 
+      - start-dev
+      - --import-realm
+    volumes:
+      - $PWD/realm-export.json:/opt/keycloak/data/import/realm.json
+    ports:
+      - "8082:8080"
+    restart: unless-stopped
+    networks:
+      - local-keycloak
+  mongodb:
+    image: mongo
+    container_name: "mongodb"
+    command: mongod --auth
+    environment:
+      - MONGO_INITDB_DATABASE=admin
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+    ports:
+      - "27017:27017"
+networks:
+  local-keycloak:
+volumes: 
+  db:
