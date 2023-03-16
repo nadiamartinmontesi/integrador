@@ -21,11 +21,6 @@ public class UserController {
     return userService.findNoAdmin();
   }
 
-  //@GetMapping("/me")
-  //public User getUserExtra(@RequestParam String principal) {
-  //  return userService.validateAndGetUserExtra(principal);
-  //}
-
   //@PostMapping("/me")
   //public User saveUserExtra(@Valid @RequestBody UserDTO updateUserRequest, @RequestParam(value = "principal") String principal) {
   //  Optional<User> userOptional = userService.getUserExtra(principal);

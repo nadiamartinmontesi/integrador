@@ -11,7 +11,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Repository
@@ -21,15 +20,6 @@ public class KeycloakRepository {
     private Keycloak keycloak;
     @Value("${dm.keycloak.realm}")
     private String realm;
-
-    //public List<UserDTO> findNoAdmin() {
-    //    List<UserRepresentation> usersKeycloak = keycloak.realm(realm).users().list();
-    //    List<UserRepresentation> usersEnabled = usersKeycloak.stream().filter(userRepresentation -> {
-    //        List<GroupRepresentation> groups = keycloak.realm(realm).users().get(userRepresentation.getId()).groups();
-    //        return  groups.stream().noneMatch(s -> Objects.equals(s.getName(), "admin"));
-    //    }).collect(Collectors.toList());
-    //    return usersEnabled.stream().map(this::toUserDTO).collect(Collectors.toList());
-    //}
 
     public List<UserDTO> findNoAdmin(){
 
