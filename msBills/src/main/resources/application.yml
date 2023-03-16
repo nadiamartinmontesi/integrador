@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: ms-bill
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: sa
+    password: sa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8082/realms/DigitalMedia
+        registration:
+          ms-bill: #en hello-service esta como keycloak
+            provider: keycloak # va?
+            client-id: microservicios
+            client-secret: 3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN
+            #scope: openid # va?
+            authorization-grant-type: authorization_code
+            redirect-uri: 'http://localhost:8086/login/oauth2/code/keycloak' #si usamos google vamos a tener que poner google en vez de keycloak
+
+
+server:
+  port: ${PORT:8087}
+
+eureka:
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    enabled: true
