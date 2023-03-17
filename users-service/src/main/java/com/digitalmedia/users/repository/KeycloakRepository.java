@@ -1,6 +1,7 @@
 package com.digitalmedia.users.repository;
 
 
+import com.digitalmedia.users.model.User;
 import com.digitalmedia.users.model.dto.UserDTO;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.representations.idm.GroupRepresentation;
@@ -9,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Repository
@@ -63,5 +67,38 @@ public class KeycloakRepository {
         return new UserDTO(userRepresentation.getUsername(), userRepresentation.getEmail());
     }
 
+    public User save(User user, String group) {
+        UserRepresentation userRepresentation = toUserRepresentation(user);
+        userRepresentation.setGroups(List.of(group));
+        Response response = keycloak.realm(realm).users().create(userRepresentation);
+        if (response.getStatus() == 200) {
+            List<UserRepresentation> users = keycloak.realm(realm).users().search(user.getUsername());
+            return toUserModel(users.get(0));
+        }
+        return null;
+    }
 
+    private UserRepresentation toUserRepresentation(User user) {
+        UserRepresentation userRepresentation = new UserRepresentation();
+        userRepresentation.setUsername(user.getUsername());
+        userRepresentation.setFirstName(user.getFirstName());
+        userRepresentation.setLastName(user.getLastName());
+        userRepresentation.setEmail(user.getEmail());
+        userRepresentation.setRequiredActions(List.of("UPDATE_PASSWORD"));
+
+        return userRepresentation;
+    }
+
+    private User toUserModel(UserRepresentation userRepresentation) {
+        return new User(userRepresentation.getUsername(), userRepresentation.getFirstName(), userRepresentation.getLastName(), userRepresentation.getEmail());
+    }
+
+    public User findByUsername(String username){
+        List <UserRepresentation> user = keycloak
+                .realm(realm)
+                .users()
+                .search(username);
+
+        return toUserModel(user.get(0));
+    }
 }

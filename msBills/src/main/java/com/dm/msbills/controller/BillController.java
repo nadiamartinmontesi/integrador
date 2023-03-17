@@ -1,6 +1,7 @@
 package com.dm.msbills.controller;
 
 import com.dm.msbills.models.Bill;
+import com.dm.msbills.models.BillWithUser;
 import com.dm.msbills.service.BillService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,15 +30,9 @@ public class BillController {
     return ResponseEntity.ok().body(service.saveBill(bill));
   }
 
-  @GetMapping("/findBy")
-  @PreAuthorize("hasAuthority('GROUP_provider')")
-  public ResponseEntity<Bill> findByCustomer(@RequestParam String customer) {
-    Bill bill = service.findByCustomer(customer);
-    if (bill != null) {
-      return ResponseEntity.ok().body(bill);
-    }
-    return ResponseEntity.notFound().build();
+  @GetMapping("/detail/{username}")
+  @PreAuthorize("hasAuthority('GROUP_client')")
+  public List<BillWithUser> findAllByUsername(@PathVariable("username") String username){
+    return service.findAllByUsername(username);
   }
-
-
 }

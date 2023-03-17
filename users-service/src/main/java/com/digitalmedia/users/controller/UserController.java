@@ -1,5 +1,6 @@
 package com.digitalmedia.users.controller;
 
+import com.digitalmedia.users.model.User;
 import com.digitalmedia.users.model.dto.UserDTO;
 import com.digitalmedia.users.service.UserService;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -21,11 +22,14 @@ public class UserController {
     return userService.findNoAdmin();
   }
 
-  //@PostMapping("/me")
-  //public User saveUserExtra(@Valid @RequestBody UserDTO updateUserRequest, @RequestParam(value = "principal") String principal) {
-  //  Optional<User> userOptional = userService.getUserExtra(principal);
-  //  User userExtra = userOptional.orElseGet(() -> new User(principal));
-  //  userExtra.setAvatar(updateUserRequest.getAvatar());
-  //  return userService.saveUserExtra(userExtra);
-  //}
+  @GetMapping("/find/{username}")
+  @PreAuthorize("hasAuthority('GROUP_admin')")
+  public User getUserByUsernameAdmin(@PathVariable("username") String username) {
+    return userService.findByUsername(username);
+  }
+
+  @GetMapping("/find/{username}")
+  public User getUserByUsername(@PathVariable("username") String username) {
+    return userService.findByUsername(username);
+  }
 }
