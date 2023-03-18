@@ -1,0 +1,453 @@
+{
+	"info": {
+		"_postman_id": "22c225cb-385c-450a-a2c8-2fcb6b92e6c2",
+		"name": "Keycloak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18027997"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Post Movies (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5czNQX1puZmQwbWZ3Mlp1ejRBQTkwVmNCelF6Q3dFMzJvVWdCX3VsWXBnIn0.eyJleHAiOjE2Nzg1NzAxNzYsImlhdCI6MTY3ODU2OTk5NiwianRpIjoiZDI1ZWI4MDUtNzFjMS00ZGVmLWE5NzktZTRhNTMzZjZhMmRhIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNmFmODIxYjAtMGVjZC00ZmY2LTg0ZGUtMzk3MmIzYWNmZDRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiOGM5ZjUxYTUtYWU2MC00NDI1LTk1YWEtZGEzYzkzZTdkNTZmIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiI4YzlmNTFhNS1hZTYwLTQ0MjUtOTVhYS1kYTNjOTNlN2Q1NmYiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImdyb3VwcyI6WyIvYWRtaW4iXSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjIifQ.S57UUIhz_nIceyqQY-9Ul5iHYrTtFk3x8nETYLJtCRZMF4eZWmCUsxcZAOT-nAWZ9xU1Tk3V1Ge4UCk7VoJ3Xic820xGOBY-pKgNqSoJXvVsZ6PR5o-pKSyzxoTY-3V8sx6AeMPxQorLv1hodZrHj-N3ccM-FGwJiaGu3hxBpqJNcqIs2Rq879RK2fdAb_inKQu0wC1-gak-pgj1MQUjhaYLe-WPVzeptNhMYOsYH8Ptkis-SPFyB3gBW52rtcLiBIimuzBYSIif_6A4iarhDzi9ow2LmfohoQNzHuMoYZ-GxpRluVqrRMcSWSyuK1NTVacAMSz0q2a6rY4fhL0sFw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"imdbId\": \"1\",\n    \"title\": \"movie1\",\n    \"director\": \"Anderson\",\n    \"year\": \"2002\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8085/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Movies (client y admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5czNQX1puZmQwbWZ3Mlp1ejRBQTkwVmNCelF6Q3dFMzJvVWdCX3VsWXBnIn0.eyJleHAiOjE2Nzg1NzUxMDAsImlhdCI6MTY3ODU3NDgwMCwianRpIjoiODBkNmJjNzYtODNlNy00OGUzLWEwYTktZDk3YmViZjI3ODI1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMjgxNmQwNzktNTdjMS00YzBjLTlhMzAtOWFkNGNlMmViYmM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiYTY4ZGI0NzMtZGFjYS00ODRlLWIyMGUtYzUxNzIxZWM0MDBjIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwiY2xpZW50IiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiJhNjhkYjQ3My1kYWNhLTQ4NGUtYjIwZS1jNTE3MjFlYzQwMGMiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImdyb3VwcyI6WyIvY2xpZW50Il0sInByZWZlcnJlZF91c2VybmFtZSI6InVzZXIxIn0.VA_UBA7GS3ymsHNuZ85lVOoYBWpEv7GdyszWY-7WCT58VaElHqzjycUfUy6IseDIGMWf7WxxAktVZQquIpcAgGhHTLHUcm-oYdNv7CCkKbSAwbqArazMcKf78bgVA7KxW0-lpBR_Tfwa_Z-weIeelXSQRSJoVXZFmRw8Fyq-OWM0iGPfhy4VQS88sx5Wrz49j3s_REPEoh-d7bh6yzqSDKYMucikMBeY6b8SLiS3Al0T_lzZy1zcF7gfdGyxJf29VUrbu_NU5v7y0euUjb6FA9WVvolPW7zJiEAt1GjjVXDSQM61LT5FA_tQUxfQHycerzji9UIzfOJ8JUJXR9ZqkQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "One Movie (client y admin)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movie (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5czNQX1puZmQwbWZ3Mlp1ejRBQTkwVmNCelF6Q3dFMzJvVWdCX3VsWXBnIn0.eyJleHAiOjE2Nzg1NzAwNTIsImlhdCI6MTY3ODU2OTc1MiwianRpIjoiZmNmMjM3ZjctYmQzNC00NGQ4LWI4ZWItOGVhYjViMTlmMmE2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNmFmODIxYjAtMGVjZC00ZmY2LTg0ZGUtMzk3MmIzYWNmZDRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiOGM5ZjUxYTUtYWU2MC00NDI1LTk1YWEtZGEzYzkzZTdkNTZmIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiI4YzlmNTFhNS1hZTYwLTQ0MjUtOTVhYS1kYTNjOTNlN2Q1NmYiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImdyb3VwcyI6WyIvYWRtaW4iXSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjIifQ.Pq2u91ub7LK2ot0iJ2DIpcxHizQFn7Twc4uprMWOMFkSo7Cezdk2rW-8DbxYzC7r2Cq8cPizdmOyyBX9OWgeRMrIixftM7lGRxyAPvvjewCZ89absdFjlUxaqMfstIZOfWvJnb4o9S-NkvL0lG8y2sopDPTJL_k82vLnizpz2FuH00nf8ReSuEn1bGvFgnLJPbC1MeP57Q7v5PXZr56uUidxMj17QFvuskZAQJ8fJQGcEmvI6AmkdQzdpeJiczByxetbw0hP_SZ-M70CGGrHemU6u3MIGAI4Aso2glvv2wF-kqatW-wTgtq0d0Iqa9pb8Jc98uv-9w1mvSzYbEZvpw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8085/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8085",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bills",
+			"item": [
+				{
+					"name": "All Bills (provider)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5czNQX1puZmQwbWZ3Mlp1ejRBQTkwVmNCelF6Q3dFMzJvVWdCX3VsWXBnIn0.eyJleHAiOjE2NzkwOTU2NTUsImlhdCI6MTY3OTA5NTM4NCwianRpIjoiMTE5NmI2ZTktOTNkMi00MDZmLWJjNmQtZjdkNTRhYWQ2YTc1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMTE1OWRiMTYtYTFmZS00MzdhLWI0NjgtYmRkY2EwZDNiYmYzIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiMzFhYzM3YjgtNTllZi00NjU4LWIwYzktMDAxMjNkM2M3ZjI4IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIzMWFjMzdiOC01OWVmLTQ2NTgtYjBjOS0wMDEyM2QzYzdmMjgiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImdyb3VwcyI6WyIvcHJvdmlkZXIiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjMifQ.T5MBSFr_Yf3eR00-KjkRKnaz43vyxSf32JDt9EuhlEnY9oRwqjfXwi3OzF3RpATaDtXbUlW1bBllz1mCVaH4Q9yDpjvTHJAyCHaW9WEhMNeaf2vxH6MjDCVVOdKZGsumeiidCvJAjfKPay5Z8MDcbQqLTRmz3xExnjExJTSs08wNl5kB8VW1CO3GmDxuhZG_Gixa4ztHknpKrGpuCxCck3pAR0mgljPeZwnczX0wlhot_5_3oNXRDugFGHagqVJZpZh72jfepxaGCvfw6NsUkKXP4mlWKB1sh4uOMAamb_zXKYyCxU9c5-xaBRO2Y-PKofuxzTqz9Kiyfg9J5bPhNQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/bills/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"bills",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bills with user (client)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5czNQX1puZmQwbWZ3Mlp1ejRBQTkwVmNCelF6Q3dFMzJvVWdCX3VsWXBnIn0.eyJleHAiOjE2NzkxNjk2MjcsImlhdCI6MTY3OTE2OTMyNywianRpIjoiYWY5ODU0NjUtOTM1Ny00YzFjLWJkODItMjg5MzA1NmIwYjQ3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZjgwM2YxMGMtY2I4Mi00NGE0LWI4NDgtNWY4MTdiN2RhMDNhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiZGQ2Y2ZkOGUtOGQxYy00YTU4LTlhMWYtZWU2NTQyNjZiMzMzIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwiY2xpZW50IiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiJkZDZjZmQ4ZS04ZDFjLTRhNTgtOWExZi1lZTY1NDI2NmIzMzMiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJjbGllbnQgY2xpZW50IiwiZ3JvdXBzIjpbIi9jbGllbnQiXSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcmNsaWVudCIsImdpdmVuX25hbWUiOiJjbGllbnQiLCJmYW1pbHlfbmFtZSI6ImNsaWVudCIsImVtYWlsIjoiY2xpZW50QG1haWwuY29tIn0.Sm6hrd9byrOSp9O_mLxSLuLqta3P4Cfgq9DRvV98I2t7b8NirjubmqTEDHxTvE8WZoQLrl7In_ePTawFcJK_Hp4xpVVAFOrrU5vsaDUhtjN95P-ViQRF1o6efFeInUyqDB3qayBmgp6o8V7iGrU-KOn5YB8cPdNoogw3X-zcdMxwvHbinQgOxUbFg2W95cdF5cS8oKxWi03O62x9lTeNT26oAxFBjVqsOSF6KTpuXQpg1s4rTWIbxOMCn9CAWPU9vNbQhLg_MyJp6fKZ9L8CJUiL__TceTAjF3NMUjpQwdk9jI-LBelOGvIsUY0rLuGeJMz-AmmoYeyGkbqtacbPkw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8087/bills/detail/userclient",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8087",
+							"path": [
+								"bills",
+								"detail",
+								"userclient"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get users NO admin (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI5czNQX1puZmQwbWZ3Mlp1ejRBQTkwVmNCelF6Q3dFMzJvVWdCX3VsWXBnIn0.eyJleHAiOjE2Nzg2NzY1MTksImlhdCI6MTY3ODY3NjIxOSwianRpIjoiZTdmYmRmN2MtZTFlMy00NzE4LTk3NWEtOWVlZDg2NDkwOTk1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiNmFmODIxYjAtMGVjZC00ZmY2LTg0ZGUtMzk3MmIzYWNmZDRjIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoibWljcm9zZXJ2aWNpb3MiLCJzZXNzaW9uX3N0YXRlIjoiMmVkMGFlMmMtMjQ4Ni00MGM0LTlkOTktZGJhYzhlY2MxMWI3IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLWRpZ2l0YWxtZWRpYSIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiIyZWQwYWUyYy0yNDg2LTQwYzQtOWQ5OS1kYmFjOGVjYzExYjciLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImdyb3VwcyI6WyIvYWRtaW4iXSwicHJlZmVycmVkX3VzZXJuYW1lIjoidXNlcjIifQ.kNB8zTsoZxIxYAlw_-Nfo5SBYPe-Ljj4Y94IO2f1jkcTr7rF9cpnD04HQ0i7j-7Cg1QPs2R6mAed54pYwdETKpXBAM1i1KDCZk2yqg5DnR85gELlK1Ic_8PPuW4is2ku06k0E2EgDYl6J_oyI93CcRw_006-xncjAlZ9YQ3UjcYZkwuCBSDjyZdfGSqJL74CTQefiFoS8MvnxGYIGRVor7G7J-SvI_Yug6-9xXVUEe1-9kmbiASvhT7Bs_yYPZvq_NmWxg5S_vUzR4Ngs7TB7TBFHLur4a6Tc4LHqyjCwf31iugL2qlxFvAj1JGZHbSNPVo_u7jtNvSmVHmZKvfF5w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8089/users/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8089",
+							"path": [
+								"users",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": ".well-know",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{port-realm}}/realms/{{realm}}/.well-known/openid-configuration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port-realm}}",
+					"path": [
+						"realms",
+						"{{realm}}",
+						".well-known",
+						"openid-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get code auth via html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/realms/digitalhouse/protocol/openid-connect/auth?client_id=oidc-postman&redirect_uri=http://localhost:8084/&scope=openid scopegroup roles&response_type=code&client_secret=cZ3Zwtld7HdN79WnbjYkwUIuH2dLCm12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"realms",
+						"digitalhouse",
+						"protocol",
+						"openid-connect",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "client_id",
+							"value": "oidc-postman"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8084/"
+						},
+						{
+							"key": "scope",
+							"value": "openid scopegroup roles"
+						},
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "client_secret",
+							"value": "cZ3Zwtld7HdN79WnbjYkwUIuH2dLCm12"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Token desde Postman",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "microservicios",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user1",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user1",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN",
+							"type": "text"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/realms/DigitalMedia/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"realms",
+						"DigitalMedia",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "refresh_token",
+							"type": "text"
+						},
+						{
+							"key": "refresh_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJkZWFmZjRhYS00MjM5LTQyMDUtOTRmNi1hMjVmZWQ3MGZmMzgifQ.eyJleHAiOjE2NzkxNjk1MjcsImlhdCI6MTY3OTE2OTIyNywianRpIjoiNzA4NmNlMzktYzZlZS00ZGM2LWI5NmYtNTU5NGYwNzNlOGY2IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL3JlYWxtcy9EaWdpdGFsTWVkaWEiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODIvcmVhbG1zL0RpZ2l0YWxNZWRpYSIsInN1YiI6IjVkZDUxOGNkLTI3NDQtNGMzNS1iYjZjLTZkYWQyNDQ1N2Q3YSIsInR5cCI6IlJlZnJlc2giLCJhenAiOiJtaWNyb3NlcnZpY2lvcyIsInNlc3Npb25fc3RhdGUiOiJmZmNhZjgxMi1iYjU4LTQwODYtYjI4NS03YzAwM2YzNjg1MTYiLCJzY29wZSI6ImVtYWlsIHByb2ZpbGUiLCJzaWQiOiJmZmNhZjgxMi1iYjU4LTQwODYtYjI4NS03YzAwM2YzNjg1MTYifQ.8uQFnIJ7WJHjcGFnUWHNcyymPgoQEXrlnREFqVPiHWU",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://localhost:8084/",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:{{port-realm}}/realms/{{realm}}/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port-realm}}",
+					"path": [
+						"realms",
+						"{{realm}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port-realm",
+			"value": "8082",
+			"type": "string"
+		},
+		{
+			"key": "realm",
+			"value": "digitalMedia",
+			"type": "string"
+		},
+		{
+			"key": "client_id",
+			"value": "microservicios",
+			"type": "string"
+		},
+		{
+			"key": "refresh_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
