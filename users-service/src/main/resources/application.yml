@@ -27,7 +27,7 @@ spring:
     name: users-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/moviesdb
+      uri: mongodb://localhost:27017/usersdb
   main:
     allow-circular-references: true
   security:

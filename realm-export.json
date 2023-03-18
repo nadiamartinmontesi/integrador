@@ -1,7 +1,7 @@
 {
   "id": "DigitalMedia",
   "realm": "DigitalMedia",
-  "notBefore": 0,
+  "notBefore": 1679170043,
   "defaultSignatureAlgorithm": "RS256",
   "revokeRefreshToken": false,
   "refreshTokenMaxReuse": 0,
@@ -49,6 +49,14 @@
         "id": "0b757579-548f-4f1c-a171-5d008f151d7f",
         "name": "offline_access",
         "description": "${role_offline-access}",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "DigitalMedia",
+        "attributes": {}
+      },
+      {
+        "id": "050ad3ab-cc38-4612-8948-a5d07ae10202",
+        "name": "client",
         "composite": false,
         "clientRole": false,
         "containerId": "DigitalMedia",
@@ -411,7 +419,9 @@
       "name": "client",
       "path": "/client",
       "attributes": {},
-      "realmRoles": [],
+      "realmRoles": [
+        "client"
+      ],
       "clientRoles": {},
       "subGroups": []
     },
@@ -472,22 +482,6 @@
   "webAuthnPolicyPasswordlessAcceptableAaguids": [],
   "users": [
     {
-      "id": "12f8ac21-8ac8-40d4-b3d7-2b1d0fd08df7",
-      "createdTimestamp": 1678041351474,
-      "username": "service-account-api-gateway",
-      "enabled": true,
-      "totp": false,
-      "emailVerified": false,
-      "serviceAccountClientId": "api-gateway",
-      "disableableCredentialTypes": [],
-      "requiredActions": [],
-      "realmRoles": [
-        "default-roles-digitalmedia"
-      ],
-      "notBefore": 0,
-      "groups": []
-    },
-    {
       "id": "67f68130-ac53-4509-9521-3930d9ed12e9",
       "createdTimestamp": 1678041158234,
       "username": "service-account-microservicios",
@@ -500,6 +494,14 @@
       "realmRoles": [
         "default-roles-digitalmedia"
       ],
+      "clientRoles": {
+        "realm-management": [
+          "view-users",
+          "query-groups",
+          "manage-users",
+          "query-users"
+        ]
+      },
       "notBefore": 0,
       "groups": []
     }
@@ -660,13 +662,15 @@
     {
       "id": "a25dac71-2d45-4dea-ad90-9c92fa08e59a",
       "clientId": "api-gateway",
+      "rootUrl": "http://localhost:9092/",
+      "adminUrl": "",
       "surrogateAuthRequired": false,
       "enabled": true,
       "alwaysDisplayInConsole": false,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://localhost:9092/"
+        "http://localhost:9092/*"
       ],
       "webOrigins": [],
       "notBefore": 0,
@@ -674,8 +678,8 @@
       "consentRequired": false,
       "standardFlowEnabled": true,
       "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": true,
-      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
       "publicClient": false,
       "frontchannelLogout": false,
       "protocol": "openid-connect",
@@ -695,7 +699,7 @@
         "saml.allow.ecp.flow": "false",
         "saml.assertion.signature": "false",
         "id.token.as.detached.signature": "false",
-        "client.secret.creation.time": "1678041351",
+        "client.secret.creation.time": "1678574201",
         "saml.encrypt": "false",
         "saml.server.signature": "false",
         "exclude.session.state.from.auth.response": "false",

@@ -1,0 +1,16 @@
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/service/MovieServiceImpl.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/config/ErrorAttributesConfig.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/exception/MovieNotFoundException.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/repository/MovieRepository.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/model/dto/AddCommentRequest.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/model/dto/MovieDto.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/model/dto/CreateMovieRequest.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/security/OAuth2ResourceServerSecurityConfiguration.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/controller/MoviesController.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/config/SwaggerConfig.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/service/MovieService.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/MoviesApiApplication.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/model/dto/UpdateMovieRequest.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/security/KeyCloakJwtAuthenticationConverter.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/model/Movie.java
+/Users/nadiamartinmontesi/Documentos/Especializacion/2Bimestre/Back2/Integrador/NadiaMartinMontesi/integrador/movies-api/src/main/java/com/digitalmedia/movies/mapper/MovieMapper.java

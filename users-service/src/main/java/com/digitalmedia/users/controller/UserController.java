@@ -22,7 +22,7 @@ public class UserController {
     return userService.findNoAdmin();
   }
 
-  @GetMapping("/find/{username}")
+  @GetMapping("/admin/find/{username}")
   @PreAuthorize("hasAuthority('GROUP_admin')")
   public User getUserByUsernameAdmin(@PathVariable("username") String username) {
     return userService.findByUsername(username);
