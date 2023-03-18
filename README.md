@@ -2,6 +2,7 @@
 
 
 Levantamos las configuraciones que necesitamos con el docker-compose up
+
 Dentro del docker-compose se encuentra el .json con las configuraciones del reino.
 
 <img width="692" alt="Captura de Pantalla 2023-03-18 a la(s) 18 40 55" src="https://user-images.githubusercontent.com/86934894/226142931-8d785cbc-296c-4a35-8b8c-8f3691cc3fb4.png">
@@ -12,9 +13,11 @@ Tiene una anotación para que funcione en el sistema operativo de Apple. Si no f
 <img width="1269" alt="Captura de Pantalla 2023-03-18 a la(s) 18 42 42" src="https://user-images.githubusercontent.com/86934894/226143009-f08915b8-0d21-4258-bd57-598faec66d57.png">
 
 
+
 Luego de levantar los cinco microservicios podemos comprobar que esten todos en Eureka.
 
 <img width="1257" alt="Captura de Pantalla 2023-03-18 a la(s) 16 40 19" src="https://user-images.githubusercontent.com/86934894/226143057-43456d77-9f7b-4d52-ae9e-bcbd79be92fd.png">
+
 
 
 Dentro del reino en Keycloak podemos comprobar que estén creados los clients, los grupos y los tres usuarios definidos en el microservicio de users. (Las passwords definidas para cada usuario es el grupo al que corresponde).
@@ -39,6 +42,7 @@ Y también los datos de un usuario en cuestión
 <img width="1213" alt="Captura de Pantalla 2023-03-18 a la(s) 16 52 04" src="https://user-images.githubusercontent.com/86934894/226143286-a9d5bd47-031b-416f-98f8-a6d20f47f1d9.png">
 
 Estos endpoints funcionan llamando al gateway en el puerto 9092. Dentro de Postman no pude realizar la llamada al gateway ya que me traía el formulario en html.
+
 
 
 Lo que si podemos ver en Postman son las facturas creadas, tenemos que acceder como un usuario provider y llamar al puerto 8087.
