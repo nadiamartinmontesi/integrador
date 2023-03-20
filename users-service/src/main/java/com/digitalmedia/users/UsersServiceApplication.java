@@ -21,7 +21,7 @@ public class UsersServiceApplication {
             .serverUrl("http://localhost:8082/")
             .realm("DigitalMedia")
             .clientId("microservicios")
-            .clientSecret("3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN")
+            .clientSecret("YgoMwD54BtfkRRfZ90WWWvZU2IZLoszY")
             .grantType(OAuth2Constants.CLIENT_CREDENTIALS)
             .build();
 

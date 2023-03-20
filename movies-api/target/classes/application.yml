@@ -13,13 +13,12 @@ spring:
           keycloak:
             issuer-uri: http://localhost:8082/realms/DigitalMedia
         registration:
-          movies-service: #en hello-service esta como keycloak
-            provider: keycloak # va?
+          movies-service:
+            provider: keycloak
             client-id: microservicios
-            client-secret: 3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN
-            #scope: openid # va?
+            client-secret: YgoMwD54BtfkRRfZ90WWWvZU2IZLoszY
             authorization-grant-type: authorization_code
-            redirect-uri: 'http://localhost:8086/login/oauth2/code/keycloak' #si usamos google vamos a tener que poner google en vez de keycloak
+            redirect-uri: 'http://localhost:8086/login/oauth2/code/keycloak'
 
 app:
   cors:

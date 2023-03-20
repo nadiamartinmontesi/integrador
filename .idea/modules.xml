@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/eurekaService/eurekaService.iml" filepath="$PROJECT_DIR$/eurekaService/eurekaService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-api/gateway-api.iml" filepath="$PROJECT_DIR$/gateway-api/gateway-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/integrador.iml" filepath="$PROJECT_DIR$/.idea/integrador.iml" />
+      <module fileurl="file://$PROJECT_DIR$/movies-api/movies-api.iml" filepath="$PROJECT_DIR$/movies-api/movies-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/msBills/ms-bills.iml" filepath="$PROJECT_DIR$/msBills/ms-bills.iml" />
+      <module fileurl="file://$PROJECT_DIR$/users-service/users-service.iml" filepath="$PROJECT_DIR$/users-service/users-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -11,7 +11,7 @@ spring:
           api-gateway-service:
             provider: keycloak
             client-id: api-gateway
-            client-secret: eOGyD5rsFkpashpni556B3zyXJ0AJGIf
+            client-secret: UoOW5OfsAegyLclWnz7dXqhMqLQTFHzT
             authorization-grant-type: authorization_code
             redirect-uri: 'http://localhost:9092/login/oauth2/code/keycloak'
   cloud:
