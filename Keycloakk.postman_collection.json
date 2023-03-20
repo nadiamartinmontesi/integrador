@@ -252,51 +252,6 @@
 			"response": []
 		},
 		{
-			"name": "Get code auth via html",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8082/realms/digitalhouse/protocol/openid-connect/auth?client_id=oidc-postman&redirect_uri=http://localhost:8084/&scope=openid scopegroup roles&response_type=code&client_secret=cZ3Zwtld7HdN79WnbjYkwUIuH2dLCm12",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8082",
-					"path": [
-						"realms",
-						"digitalhouse",
-						"protocol",
-						"openid-connect",
-						"auth"
-					],
-					"query": [
-						{
-							"key": "client_id",
-							"value": "oidc-postman"
-						},
-						{
-							"key": "redirect_uri",
-							"value": "http://localhost:8084/"
-						},
-						{
-							"key": "scope",
-							"value": "openid scopegroup roles"
-						},
-						{
-							"key": "response_type",
-							"value": "code"
-						},
-						{
-							"key": "client_secret",
-							"value": "cZ3Zwtld7HdN79WnbjYkwUIuH2dLCm12"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Token desde Postman",
 			"request": {
 				"method": "POST",
@@ -311,12 +266,12 @@
 						},
 						{
 							"key": "username",
-							"value": "user1",
+							"value": "userclient",
 							"type": "text"
 						},
 						{
 							"key": "password",
-							"value": "user1",
+							"value": "client",
 							"type": "text"
 						},
 						{
@@ -326,7 +281,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN",
+							"value": "YgoMwD54BtfkRRfZ90WWWvZU2IZLoszY",
 							"type": "text"
 						},
 						{
@@ -384,7 +339,7 @@
 						},
 						{
 							"key": "client_secret",
-							"value": "3DZCKkEXAyoYvXEbeQcdeP32SA1EBgKN",
+							"value": "YgoMwD54BtfkRRfZ90WWWvZU2IZLoszY",
 							"type": "text"
 						}
 					]
